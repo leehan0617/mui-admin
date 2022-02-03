@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import AppHeader from "./layout/AppHeader";
 import AppContent from "./layout/AppContent";
-import MenuFooter from "./layout/MenuFooter";
+import AppFooter from "./layout/AppFooter";
 
 function App() {
   return (
@@ -10,9 +10,7 @@ function App() {
       <Grid container spacing={1}>
         <AppHeader></AppHeader>
         <AppContent></AppContent>
-        <Grid item xs={12}>
-          <MenuFooter></MenuFooter>
-        </Grid>
+        <AppFooter></AppFooter>
       </Grid>
     </Box>
   );
