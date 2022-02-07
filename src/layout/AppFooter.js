@@ -1,44 +1,47 @@
-import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import menuList from "../constants/menuList";
 import Grid from "@mui/material/Grid";
-import Paper from '@mui/material/Paper';
+import Paper from "@mui/material/Paper";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 function AppFooter() {
-    const [value, setValue] = useState(0);
-    const navigate = useNavigate();
+  const [value, setValue] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    const goHome = () => {
-        navigate("/");
-    }
+  useEffect(() => {
+    const { pathname } = location;
+    const matchMenu = menuList.find(({ path }) => path === pathname);
+    const { key: index } = matchMenu;
+    setValue(index);
+  }, [location]);
 
-    const goSample2 = () => {
-        navigate("/sample2");
-    }
+  const menus = menuList.map((menu) => {
+    const { key, name, path, icon } = menu;
 
     return (
-        <Grid item xs={12}>
-            <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
-                <BottomNavigation
-                    showLabels
-                    value={value}
-                    onChange={(event, newValue) => {
-                        setValue(newValue);
-                    }}
-                >
-                    <BottomNavigationAction onClick={goHome} label="Recents" icon={<RestoreIcon />} />
-                    <BottomNavigationAction onClick={goSample2} label="Favorites" icon={<FavoriteIcon />} />
-                    <BottomNavigationAction label="Archive" icon={<LocationOnIcon />} />
-                    <BottomNavigationAction label="Archive" icon={<LocationOnIcon />} />
-                    <BottomNavigationAction label="Archive" icon={<LocationOnIcon />} />
-                </BottomNavigation>
-            </Paper>
-        </Grid>
-    );  
+      <BottomNavigationAction
+        key={key}
+        onClick={() => {
+          navigate(path);
+        }}
+        label={name}
+        icon={icon}
+      />
+    );
+  });
+
+  return (
+    <Grid item xs={12}>
+      <Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }} elevation={3}>
+        <BottomNavigation showLabels value={value}>
+          {menus}
+        </BottomNavigation>
+      </Paper>
+    </Grid>
+  );
 }
 
 export default AppFooter;

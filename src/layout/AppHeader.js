@@ -10,9 +10,9 @@ function AppHeader() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            ADMIN
+            LOGO or Text
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">xxx지점</Button>
         </Toolbar>
       </AppBar>
     </Box>
