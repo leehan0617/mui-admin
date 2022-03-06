@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { styled as muiStyled } from "@mui/material/styles";
 import { ReactComponent as Logo } from "../image/login_logo.svg";
-import { Stack } from "@mui/material";
-import { TextField } from "@mui/material";
+import { Stack, TextField, Checkbox, FormGroup, FormControlLabel, Button } from "@mui/material";
 
 const WrapperDiv = styled.div`
   margin-top: 76px;
@@ -41,6 +40,43 @@ const CssTextField = muiStyled(TextField)({
   }
 });
 
+const CssFormControlLabel = muiStyled(FormControlLabel)({
+  "& .MuiFormControlLabel-label": {
+    fontSize: "13px"
+  }
+});
+
+const loginBtnSx = {
+  mt: 5,
+  mb: 3,
+  pt: 2,
+  pb: 2,
+  color: "#333333",
+  backgroundColor: "#DDEF75",
+  borderColor: "#DDEF75",
+  boxShadow: "none",
+  "&:hover": {
+    backgroundColor: "#DDEF75",
+    borderColor: "#DDEF75",
+    boxShadow: "none"
+  }
+}
+
+const FooterText = styled.span`
+  color: #ABABAB;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: -0.02em;
+`;
+
+const FooterLinkText = styled.a`
+  color: #95AE13;
+  font-size: 13px;
+  font-weight: 700;
+`;
+
 function AppLogin() {
   return (
     <WrapperDiv>
@@ -55,6 +91,14 @@ function AppLogin() {
         </SubText>
         <CssTextField placeholder="아이디" type="search" variant="standard" />
         <CssTextField placeholder="비밀번호" type="password" variant="standard" />
+        <FormGroup sx={{ mt: 2 }}>
+          <CssFormControlLabel control={<Checkbox sx={{ color: "#DDEF75", "&.Mui-checked": { color: "#DDEF75" } }} 
+            size="small" />} 
+            label="아이디 저장"
+          />
+        </FormGroup>
+        <Button sx={loginBtnSx} variant="contained" size="large">로그인하기</Button>
+        <FooterText>렛츠와인 페어링 파트너가 궁금하신가요? <FooterLinkText href="https://naver.com" target="_blank">등록 문의하기</FooterLinkText></FooterText>
       </Stack>
     </WrapperDiv>
   );

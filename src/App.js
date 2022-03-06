@@ -7,13 +7,25 @@ import AppHeader from "./layout/AppHeader";
 import AppContent from "./layout/AppContent";
 import AppFooter from "./layout/AppFooter";
 import AppLogin from "./pages/AppLogin";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const fontTheme = createTheme({
+  typography: {
+    fontFamily: [
+      "Spoqa Han Sans Neo",
+      "Roboto"
+    ].join(',')
+  }
+})
 
 function App() {
   const [isLogin, setLogin] = useState(false);
   return (
-    <Container fixed maxWidth="344" className="custom-font">
-      <AppLogin></AppLogin>
-    </Container>
+    <ThemeProvider theme={fontTheme}>
+      <Container fixed maxWidth="344">
+        <AppLogin></AppLogin>
+      </Container>
+    </ThemeProvider>
   );
 }
 

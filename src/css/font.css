@@ -32,7 +32,3 @@
     src: url("../font/SpoqaHanSansNeo-Thin.ttf") format("truetype");
     unicode-range: U+AC00-D7A3;
 }
-
-.custom-font {
-    font-family: "Spoqa Han Sans Neo", "Roboto";
-}
