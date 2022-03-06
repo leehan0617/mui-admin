@@ -1,6 +1,23 @@
-/* AppHeader css */
-.MuiToolbar-root {
-    margin-top: 8px;
-    margin-left: 8px;
-    margin-right: 8px;
+.MuiInputLabel-formControl {
+    color:#B4B4B4;
+}
+
+.MuiInput-root {
+    margin-top: 26px;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 1em;
+    width: 1em;
+    border-radius: 50em;
+    background: url(../image/input_cancel_button.svg) no-repeat 50% 50%;
+    background-size: contain;
+    opacity: 0;
+    pointer-events: none;
+}
+  
+input[type="search"]:focus::-webkit-search-cancel-button {
+opacity: .9;
+pointer-events: all;
 }
