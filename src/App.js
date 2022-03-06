@@ -1,12 +1,8 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Container } from "@mui/material";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import AppHeader from "./layout/AppHeader";
-import AppContent from "./layout/AppContent";
-import AppFooter from "./layout/AppFooter";
 import AppLogin from "./pages/AppLogin";
+import AppHome from "./pages/AppHome";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const fontTheme = createTheme({
@@ -23,7 +19,10 @@ function App() {
   return (
     <ThemeProvider theme={fontTheme}>
       <Container fixed maxWidth="344" className="custom-font">
-        <AppLogin></AppLogin>
+        <Routes>
+          <Route path="/" element={<AppLogin />} />
+          <Route path="/home" element={<AppHome />} />
+        </Routes>
       </Container>
     </ThemeProvider>
   );
