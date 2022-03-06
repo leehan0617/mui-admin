@@ -51,6 +51,8 @@ const loginBtnSx = {
   mb: 3,
   pt: 2,
   pb: 2,
+  fontSize: "15px",
+  fontWeight: 700,
   color: "#333333",
   backgroundColor: "#DDEF75",
   borderColor: "#DDEF75",
