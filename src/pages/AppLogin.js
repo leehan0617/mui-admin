@@ -30,7 +30,8 @@ const CssTextField = muiStyled(TextField)({
     color: "#7ECD19",
   },
   '& .MuiInput-root': {
-    paddingBottom: "5px"
+    paddingBottom: "5px",
+    letterSpacing: 0
   },
   '& .MuiInput-underline:before': {
     borderBottomColor: "#ECECEC",
