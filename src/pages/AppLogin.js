@@ -42,7 +42,8 @@ const CssTextField = muiStyled(TextField)({
 
 const CssFormControlLabel = muiStyled(FormControlLabel)({
   "& .MuiFormControlLabel-label": {
-    fontSize: "13px"
+    fontSize: "13px",
+    marginLeft: "-5px"
   }
 });
 
@@ -51,6 +52,7 @@ const loginBtnSx = {
   mb: 3,
   pt: 2,
   pb: 2,
+  borderRadius: "8px",
   fontSize: "15px",
   fontWeight: 700,
   color: "#333333",
@@ -94,7 +96,7 @@ function AppLogin() {
         <CssTextField placeholder="아이디" type="search" variant="standard" />
         <CssTextField placeholder="비밀번호" type="password" variant="standard" />
         <FormGroup sx={{ mt: 2 }}>
-          <CssFormControlLabel control={<Checkbox sx={{ color: "#DDEF75", "&.Mui-checked": { color: "#DDEF75" } }} 
+          <CssFormControlLabel control={<Checkbox sx={{ color: "#DCDCDC", "&.Mui-checked": { color: "#DDEF75" } }} 
             size="small" />} 
             label="아이디 저장"
           />

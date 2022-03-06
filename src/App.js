@@ -22,7 +22,7 @@ function App() {
   const [isLogin, setLogin] = useState(false);
   return (
     <ThemeProvider theme={fontTheme}>
-      <Container fixed maxWidth="344">
+      <Container fixed maxWidth="344" className="custom-font">
         <AppLogin></AppLogin>
       </Container>
     </ThemeProvider>
