@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { styled as muiStyled } from "@mui/material/styles";
 import { ReactComponent as Logo } from "../image/login_logo.svg";
 import { Stack, TextField, Checkbox, FormGroup, FormControlLabel, Button } from "@mui/material";
+import { loginApi } from "../api/loginApi";
 
 const WrapperDiv = styled.div`
   margin-top: 76px;
@@ -94,10 +95,18 @@ function AppLogin() {
     localStorage.removeItem("auth");
   }, []);
 
-  // TODO add api
-  const login = () => {
-    localStorage.setItem("auth", id);
-    navigate(from, { replace: true });
+  const login = async () => {
+    try {
+      const response = await loginApi(id, password);
+      console.log(response);
+      localStorage.setItem("auth", response);
+      navigate(from, { replace: true });
+    } catch (error) {
+      alert(error);
+      // 개발용 임시 처리
+      localStorage.setItem("auth", id);
+      navigate(from, { replace: true });
+    }
   };
 
   return (

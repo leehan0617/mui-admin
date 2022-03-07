@@ -34,7 +34,7 @@ function App() {
               }
             />
             <Route path="/login" element={<AppLogin />} />
-            <Route path="*" element={<div>404</div>} />
+            <Route path="*" element={<div>404 NotFound</div>} />
           </Routes>
         </BrowserRouter>
       </Container>
