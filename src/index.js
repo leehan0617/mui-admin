@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { RecoilRoot } from "recoil";
 // import css
 import "./css/reset.css";
 import "@fontsource/roboto/300.css";
@@ -10,13 +11,11 @@ import "./css/font.css";
 import "./css/custom.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-// router
-import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
-  <BrowserRouter>
+  <RecoilRoot>
     <App />
-  </BrowserRouter>,
+  </RecoilRoot>,
   document.getElementById("root")
 );
 
