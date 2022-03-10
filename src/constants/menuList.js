@@ -6,33 +6,33 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 const menuList = [
   {
     key: 0,
-    name: "Menu1",
+    name: "홈",
     icon: <FavoriteIcon />,
     path: "/",
   },
   {
     key: 1,
-    name: "Menu2",
+    name: "정산 관리",
     icon: <RestoreIcon />,
-    path: "/sample2",
+    path: "/settlement",
   },
   {
     key: 2,
-    name: "Menu3",
+    name: "주문 관리",
     icon: <LocationOnIcon />,
-    path: "/sample3",
+    path: "/order",
   },
   {
     key: 3,
-    name: "Menu4",
+    name: "매장 수정",
     icon: <LocationOnIcon />,
-    path: "/sample4",
+    path: "/manage",
   },
   {
     key: 4,
-    name: "Menu5",
+    name: "카카오 문의",
     icon: <LocationOnIcon />,
-    path: "/sample5",
+    path: "/kakao",
   },
 ];
 

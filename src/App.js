@@ -1,8 +1,6 @@
-import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
-import { Container } from "@mui/material";
-import AppLogin from "./pages/AppLogin";
-import AppHome from "./pages/AppHome";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Container } from "@mui/material";
+import AppRouter from "./router/AppRouter";
 
 const fontTheme = createTheme({
   typography: {
@@ -10,33 +8,11 @@ const fontTheme = createTheme({
   },
 });
 
-function AuthChecker({ children }) {
-  const location = useLocation();
-  return localStorage.getItem("auth") ? (
-    children
-  ) : (
-    <Navigate to="/login" state={{ from: location }} replace />
-  );
-}
-
 function App() {
   return (
     <ThemeProvider theme={fontTheme}>
       <Container fixed maxWidth="344" className="custom-font">
-        <BrowserRouter>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <AuthChecker>
-                  <AppHome />
-                </AuthChecker>
-              }
-            />
-            <Route path="/login" element={<AppLogin />} />
-            <Route path="*" element={<div>404 NotFound</div>} />
-          </Routes>
-        </BrowserRouter>
+        <AppRouter />
       </Container>
     </ThemeProvider>
   );
