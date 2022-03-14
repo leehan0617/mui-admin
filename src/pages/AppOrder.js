@@ -1,5 +1,7 @@
+import OrderTitle from "../component/order/OrderTitle";
+
 function AppOrder() {
-  return <div>Order page</div>;
+  return <OrderTitle />;
 }
 
 export default AppOrder;
