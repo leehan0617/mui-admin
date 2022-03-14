@@ -4,11 +4,11 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 function SettlementByDate() {
   return (
     <div>
-      <Accordion>
+      <Accordion defaultExpanded={true} sx={{ boxShadow: 0 }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
-          aria-controls="settlement-total-content"
-          id="settlement-total-header">
+          aria-controls="settlement-by-date-content"
+          id="settlement-by-date-header">
           <Typography>날짜별</Typography>
         </AccordionSummary>
         <AccordionDetails>

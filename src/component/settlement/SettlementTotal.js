@@ -4,7 +4,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 function SettlementTotal() {
   return (
     <div>
-      <Accordion>
+      <Accordion defaultExpanded={true} sx={{ boxShadow: 0 }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="settlement-total-content"
