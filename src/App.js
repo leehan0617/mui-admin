@@ -8,10 +8,10 @@ const fontTheme = createTheme({
   },
   palette: {
     primary: {
-      main: "#def26a",
+      main: "#7ECD19",
     },
     secondary: {
-      main: "#757575",
+      main: "#333333",
     },
   },
 });

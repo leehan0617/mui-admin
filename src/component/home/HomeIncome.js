@@ -1,23 +1,33 @@
 import styled from "styled-components";
 import { styled as muiStyled } from "@mui/material/styles";
 import { Card, CardHeader, CardContent, IconButton } from "@mui/material";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import LiquorIcon from "@mui/icons-material/Liquor";
+import { ReactComponent as HomeLogo } from "../../image/home_icon.svg";
+import { ReactComponent as RightArrow } from "../../image/right_arrow.svg";
 
 const CardContentTitle = styled.p`
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.02em;
+  color: #333333;
   text-align: center;
 `;
 const CardContentPrice = styled.p`
   text-align: center;
-  margin-top: 25px;
-  font-size: 2rem;
-  font-weight: 600;
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #333333;
+  line-height: 33px;
+`;
+
+const CardContentPriceWon = styled.span`
+  font-size: 26px;
+  font-weight: 500;
 `;
 
 const CustomCardHeader = muiStyled(CardHeader)({
   "& .MuiCardHeader-title": {
-    marginTop: "4px",
     fontSize: "1rem",
     fontWeight: 600,
   },
@@ -30,23 +40,25 @@ function HomeIncome() {
   return (
     <Card
       sx={{
-        background: "#def26a",
+        background: "#D5EC51",
         marginTop: "32px",
         borderRadius: "10px",
-        paddingBottom: "50px",
+        paddingBottom: "34px",
+        boxShadow: 0
       }}>
       <CustomCardHeader
-        avatar={<LiquorIcon />}
+        sx={{ paddingBottom: "11px" }}
+        avatar={<HomeLogo />}
         title="총 수입"
         action={
           <IconButton aria-label="settings">
-            <ArrowForwardIosIcon />
+            <RightArrow />
           </IconButton>
         }
       />
       <CardContent>
         <CardContentTitle>오늘 픽업 수수료 수입</CardContentTitle>
-        <CardContentPrice>80,000원</CardContentPrice>
+        <CardContentPrice>80,000<CardContentPriceWon>원</CardContentPriceWon></CardContentPrice>
       </CardContent>
     </Card>
   );
