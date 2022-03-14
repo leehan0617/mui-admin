@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { styled as muiStyled } from "@mui/material/styles";
 import { Grid, Button } from "@mui/material";
 import { ReactComponent as RightArrow } from "../../image/right_arrow.svg";
 

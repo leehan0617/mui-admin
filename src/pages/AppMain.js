@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { styled as muiStyled } from "@mui/material/styles";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Paper, BottomNavigation, BottomNavigationAction } from "@mui/material";
@@ -8,6 +9,23 @@ const WrapperDiv = styled.div`
   margin-top: 40px;
   margin-bottom: 70px;
 `;
+
+const CustomNavigationAction = muiStyled(BottomNavigationAction)({
+  "color": "#A7A7A7",
+  "&.Mui-selected": {
+    "color": "#333333"
+  },
+  "& .MuiBottomNavigationAction-label": {
+    marginTop: "5px",
+    color: "#A7A7A7",
+    fontSize: "10px",
+    fontWeight: 500
+  },
+  "& .MuiBottomNavigationAction-label.Mui-selected": {
+    fontSize: "10px",
+    color: "#333333"
+  }
+});
 
 function AppMain() {
   const [currentIndex, setCurrentIndex] = useState(null);
@@ -24,7 +42,7 @@ function AppMain() {
   const menus = menuList.map((menu) => {
     const { key, name, path, icon } = menu;
     return (
-      <BottomNavigationAction
+      <CustomNavigationAction
         key={key}
         onClick={() => {
           navigate(path);
