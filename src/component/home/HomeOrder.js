@@ -1,14 +1,9 @@
 import styled from "styled-components";
-import { styled as muiStyled } from "@mui/material/styles";
 import { Button } from "@mui/material";
 
 const Wrapper = styled.div`
   margin-top: 24px;
 `;
-
-const CustomOrderButton = muiStyled(Button)({});
-
-const CustomSubscribeButton = muiStyled(Button)({});
 
 function HomeOrder() {
   return (
