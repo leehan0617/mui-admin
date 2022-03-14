@@ -6,6 +6,7 @@ import menuList from "../constants/menuList";
 
 const WrapperDiv = styled.div`
   margin-top: 40px;
+  margin-bottom: 70px;
 `;
 
 function AppMain() {

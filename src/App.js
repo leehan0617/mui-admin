@@ -6,6 +6,14 @@ const fontTheme = createTheme({
   typography: {
     fontFamily: ["Spoqa Han Sans Neo", "Roboto"].join(","),
   },
+  palette: {
+    primary: {
+      main: "#def26a",
+    },
+    secondary: {
+      main: "#757575",
+    },
+  },
 });
 
 function App() {
