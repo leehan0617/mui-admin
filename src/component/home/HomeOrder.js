@@ -35,7 +35,7 @@ function HomeOrder() {
         size="large"
         variant="outlined"
         color="secondary">
-        구독인증
+        구독 인증하기
       </Button>
     </Wrapper>
   );

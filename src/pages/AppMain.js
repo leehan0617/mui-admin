@@ -56,7 +56,7 @@ function AppMain() {
   return (
     <WrapperDiv>
       <Outlet />
-      <Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}>
+      <Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0, boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.15)" }}>
         <BottomNavigation showLabels value={currentIndex}>
           {menus}
         </BottomNavigation>
